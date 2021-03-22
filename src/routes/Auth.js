@@ -79,7 +79,7 @@ const Auth = () => {
                 {error}
             </form>
             <span onClick={toggleAccount}>
-                {newAccount ? "SIgn In" : "Create Account"}
+                {newAccount ? "Sign In" : "Create Account"}
             </span>
             <div>
                 <button
