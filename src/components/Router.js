@@ -5,10 +5,10 @@ import Home from 'routes/Home';
 import Navigation from 'components/Navigation';
 import Profile from 'routes/Profile';
 
-const AppRouter = ({ userObj }) => {
+const AppRouter = ({ userObj, refreshUser }) => {
     return (
         <Router>
-            {userObj && <Navigation />}
+            {userObj && <Navigation userObj={userObj} />}
             <Switch>
                 {userObj
                 ?
@@ -17,7 +17,7 @@ const AppRouter = ({ userObj }) => {
                         <Home userObj={userObj} />
                     </Route>
                     <Route exact path="/profile">
-                        <Profile />
+                        <Profile userObj={userObj} refreshUser={refreshUser} />
                     </Route>
                 </>
                 :
