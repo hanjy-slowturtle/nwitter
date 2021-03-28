@@ -9,10 +9,10 @@ const NweetFactory = ({ userObj }) => {
     const [attachment, setAttachment] = useState('');
 
     const onSubmit = async (event) => {
+        event.preventDefault();
         if(nweet === '') {
             return;
         }
-        event.preventDefault();
         let attachmentUrl = '';
         if(attachment !== '') {
             const attachmentRef = storageService.ref().child(`${userObj.uid}/${uuidv4()}`);
